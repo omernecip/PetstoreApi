@@ -13,9 +13,6 @@ import static org.testng.Assert.assertEquals;
 
 public class UpdatePets extends TestBase{
 
-
-
-
     @Test(invocationCount = 5)
     public void updatePetNameAndStatus(){
 
@@ -28,6 +25,7 @@ public class UpdatePets extends TestBase{
         Assert.assertEquals(response.statusCode(), 200);
         response.prettyPrint();
         List<Map<String,Object>> pets = response.jsonPath().get();
+
 
         Random random = new Random();
         Map<String,Object> randomPet = pets.get(random.nextInt(pets.size()));
